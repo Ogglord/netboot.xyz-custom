@@ -5,7 +5,7 @@
 
 :custom
 clear custom_choice
-menu This is a Test Menu
+menu Ogglord's custom IPXE menu
 item --gap This is the first sub menu
 item option_one ${space} Loading a kernel and initrd
 item option_cachy ${space} Load CachyOS ISO
