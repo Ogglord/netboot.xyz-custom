@@ -8,10 +8,10 @@ clear custom_choice
 menu This is a Test Menu
 item --gap This is the first sub menu
 item option_one ${space} Loading a kernel and initrd
-item option_two ${space} Loading an ISO
+item option_cachy ${space} Load CachyOS ISO
 item --gap This is a second sub menu
-item option_three ${space} Loads another custom sub menu
-item option_four ${space} This is option four
+item option_three ${space} Loads a new menu from another git repo
+item option_four ${space} This is option four (it doesnt exist)
 choose custom_choice || goto custom_exit
 echo ${cls}
 goto ${custom_choice}
@@ -23,9 +23,9 @@ initrd http://path.to/initrd
 imgargs vmlinuz put_kernel_img_args_here
 boot || goto custom_exit
 
-:option_two
+:option_cachy
 kernel https://boot.netboot.xyz/memdisk raw iso
-initrd http://path.to/iso
+initrd https://mirror.cachyos.org/ISO/desktop/241221/cachyos-desktop-linux-241221.iso
 boot || goto custom_exit
 
 :option_three
